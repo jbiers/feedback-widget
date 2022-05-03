@@ -1,21 +1,9 @@
 import React from 'react';
-import { isPropertySignature } from 'typescript';
+import { Widget } from './components/Widget';
 
-interface ButtonProps {
-  text: string;
-}
 
-function Button({ text }: ButtonProps) {
-  return <button className="bg-violet-500 p-2">{text ?? 'Default'}</button>
-}
-
-function App() {
+export function App() {
   return (
-    <div>
-      <Button text="Enviar"/>
-      <Button text="OK"/>
-    </div>
+    <Widget />
   );
 }
-
-export default App;
