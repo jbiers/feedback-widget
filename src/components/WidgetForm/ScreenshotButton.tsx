@@ -5,7 +5,7 @@ import { Camera, Trash } from "phosphor-react";
 import { Loading } from "../Loading";
 
 interface ScreenshotButtonProps {
-    onScreenshotTaken: (screenshot: string) => void;
+    onScreenshotTaken: (screenshot: string | null) => void;
     screenshot: string | null;
 }
 
@@ -30,6 +30,12 @@ export function ScreenshotButton({
             <button
               type="button"
               className="p-1 w-10 h-10 rounded-md border-transparent flex justify-end items-end text-zinc-400 hover:text-zinc-100 transition-colors"
+              style={{
+                backgroundImage: `url(${screenshot})`,
+                backgroundPosition: 'right bottom',
+                backgroundSize: 180,
+            }}
+            onClick={() => onScreenshotTaken(null)}
             >
                 <Trash weight="fill"/>
             </button>
